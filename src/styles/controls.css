@@ -1,0 +1,114 @@
+/* ===== 컨트롤 패널 ===== */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 28px 24px;
+  backdrop-filter: blur(12px);
+  min-width: 260px;
+  max-width: 320px;
+  width: 100%;
+}
+
+/* 재생/정지 버튼 */
+.btn-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+  letter-spacing: 0.03em;
+}
+
+.btn-play.playing {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: white;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-play.paused {
+  background: linear-gradient(135deg, #56CCF2, #2F80ED);
+  color: white;
+  box-shadow: 0 4px 20px rgba(86, 204, 242, 0.4);
+}
+
+.btn-play:hover   { transform: translateY(-2px); opacity: 0.92; }
+.btn-play:active  { transform: translateY(0); }
+
+.btn-icon { font-size: 1.3rem; }
+
+/* 그룹 레이블 */
+.control-group { display: flex; flex-direction: column; gap: 10px; }
+
+.control-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* 댄스 버튼 */
+.dance-buttons,
+.speed-buttons {
+  display: grid;
+  gap: 8px;
+}
+
+.dance-buttons { grid-template-columns: repeat(2, 1fr); }
+.speed-buttons  { grid-template-columns: repeat(4, 1fr); }
+
+.btn-dance,
+.btn-speed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 6px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-dance:hover,
+.btn-speed:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-dance.active,
+.btn-speed.active {
+  background: linear-gradient(135deg, rgba(196, 166, 255, 0.35), rgba(255, 215, 0, 0.25));
+  border-color: rgba(255, 215, 0, 0.7);
+  color: #FFD700;
+  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.3);
+}
+
+.btn-speed { font-size: 0.7rem; }
+
+/* ===== 반응형 ===== */
+@media (max-width: 480px) {
+  .controls {
+    min-width: unset;
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+  .speed-buttons { grid-template-columns: repeat(4, 1fr); }
+}

@@ -1,0 +1,77 @@
+/* ===== 페이지 레이아웃 ===== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+/* 헤더 */
+.page-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.page-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #FFD700, #FF6B6B, #C4A6FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.title-emoji {
+  -webkit-text-fill-color: initial;
+  font-size: 0.85em;
+}
+
+.page-subtitle {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
+}
+
+/* 메인 */
+.page-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  gap: 30px;
+}
+
+/* 푸터 */
+.page-footer {
+  padding: 24px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 480px) {
+  .page-header {
+    padding: 24px 16px 12px;
+  }
+  .page-main {
+    gap: 20px;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+}
